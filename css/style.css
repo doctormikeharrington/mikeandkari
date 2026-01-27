@@ -291,6 +291,41 @@ p {
 }
 
 /* ============================================
+   Hero Slideshow
+   ============================================ */
+.hero__slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  margin: var(--spacing-md) auto;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.hero__slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero__slideshow img.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero__slideshow {
+    max-width: 100%;
+    height: 250px;
+  }
+}
+
+/* ============================================
    Page Header
    ============================================ */
 .page-header {

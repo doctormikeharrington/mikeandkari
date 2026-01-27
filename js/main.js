@@ -48,6 +48,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Hero Slideshow
+  const slideshow = document.querySelector('.hero__slideshow');
+  if (slideshow) {
+    const images = slideshow.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function nextSlide() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    // Change slide every 4 seconds
+    setInterval(nextSlide, 4000);
+  }
 });
 
 // Countdown Timer (optional - can be added to homepage)
